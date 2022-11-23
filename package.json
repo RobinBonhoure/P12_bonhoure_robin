@@ -1,0 +1,16 @@
+{
+  "name": "p12_bonhoure_robin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "volta": {
+    "node": "16.17.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
