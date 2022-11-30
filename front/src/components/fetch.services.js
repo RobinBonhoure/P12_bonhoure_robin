@@ -1,3 +1,7 @@
+import { performanceMocked, initialMocked, activityMocked, averageSessionsMocked } from '../mock/data-mocked.js'
+
+// SWITCH MOCKED OR API DATA
+const mocked = false;
 const url = 'http://localhost:3000/user';
 
 // GET DATA FROM BACKEND
@@ -7,13 +11,14 @@ const getFetch = async (endpoint) => {
         let res = await fetch(`${url + '/' + endpoint}`);
         return await res.json();
     } catch (error) {
-        console.log(error);
+        return false
     }
 }
 
 // GET DATA PERFORMANCE
 // param : id form url
 export const getPerformance = async (id) => {
+    if (mocked) return performanceMocked
     const performance = await getFetch(`${id + '/performance'}`);
     return performance
 };
@@ -21,6 +26,7 @@ export const getPerformance = async (id) => {
 // GET DATA GENERAL
 // param : id form url
 export const getInitial = async (id) => {
+    if (mocked) return initialMocked
     const initial = await getFetch(`${id + '/'}`);
     return initial
 };
@@ -28,6 +34,7 @@ export const getInitial = async (id) => {
 // GET DATA AVERAGE SESSIONS
 // param : id form url
 export const getSessions = async (id) => {
+    if (mocked) return averageSessionsMocked
     const initial = await getFetch(`${id + '/average-sessions'}`);
     return initial
 };
@@ -35,6 +42,7 @@ export const getSessions = async (id) => {
 // GET DATA ACTIVITY
 // param : id form url
 export const getActivity = async (id) => {
+    if (mocked) return activityMocked
     const activity = await getFetch(`${id + '/activity'}`);
     return activity
 };

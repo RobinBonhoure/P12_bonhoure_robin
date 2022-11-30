@@ -25,22 +25,32 @@ function Main() {
 
     return (
         <div>
-            {data === null ? <p>loading...</p> :
+            {data === false ?
                 <div className="Main">
                     <Nav></Nav>
                     <h1 className="Main-titre">
-                        Bonjour <span>{data.data.userInfos.firstName}</span>
+                        Pas de réponse de l'API
                     </h1>
-                    <p className="Main-soustitre">
-                        Félicitation ! Vous avez explosé vos objectifs hier 👏
-                    </p>
-                    <div className="Main-grid">
-                        <ComponentBarChart id={id}></ComponentBarChart>
-                        <ComponentLineChart id={id}></ComponentLineChart>
-                        <ComponentRadarChart id={id}></ComponentRadarChart>
-                        <ComponentRadarRadial id={id}></ComponentRadarRadial>
-                        <ComponentData id={id}></ComponentData>
-                    </div>
+                </div> :
+                <div>
+                    {data === null ? <p>loading...</p> :
+                        <div className="Main">
+                            <Nav></Nav>
+                            <h1 className="Main-titre">
+                                Bonjour <span>{data.data.userInfos.firstName}</span>
+                            </h1>
+                            <p className="Main-soustitre">
+                                Félicitation ! Vous avez explosé vos objectifs hier 👏
+                            </p>
+                            <div className="Main-grid">
+                                <ComponentBarChart id={id}></ComponentBarChart>
+                                <ComponentLineChart id={id}></ComponentLineChart>
+                                <ComponentRadarChart id={id}></ComponentRadarChart>
+                                <ComponentRadarRadial id={id}></ComponentRadarRadial>
+                                <ComponentData id={id}></ComponentData>
+                            </div>
+                        </div>
+                    }
                 </div>
             }
         </div>
