@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import { getPerformance } from './fetch.services.js'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
+const responsiveFont = window.innerWidth <= 1200 ? 10 : 12;
+
 
 function ComponentRadarChart(props) {
 
@@ -39,7 +41,7 @@ function ComponentRadarChart(props) {
           <ResponsiveContainer className="componentRadarChart">
             <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
               <PolarGrid gridType="polygon" radialLines={false} />
-              <PolarAngleAxis dataKey="subject" tick={{ fill: '#FFFFFF', fontSize: 12, lineHeight: 50 }} />
+              <PolarAngleAxis dataKey="subject" tick={{ fill: '#FFFFFF', fontSize: responsiveFont, lineHeight: 50 }} />
               <Radar dataKey="value" fill="rgba(255, 1, 1, 1)" fillOpacity={0.7} />
             </RadarChart>
           </ResponsiveContainer>
