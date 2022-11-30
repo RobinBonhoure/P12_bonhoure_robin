@@ -12,6 +12,7 @@ function ComponentRadarRadial(props) {
   }
   ]
 
+  // GET DATA
   useEffect(() => {
     async function loadData() {
       const initial = await getInitial(props.id);

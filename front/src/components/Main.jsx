@@ -14,6 +14,7 @@ function Main() {
 
     const [data, setData] = useState(null);
 
+    // GET DATA
     useEffect(() => {
         async function loadData() {
             const initial = await getInitial(id);
@@ -31,7 +32,7 @@ function Main() {
                         Bonjour <span>{data.data.userInfos.firstName}</span>
                     </h1>
                     <p className="Main-soustitre">
-                    Félicitation ! Vous avez explosé vos objectifs hier 👏
+                        Félicitation ! Vous avez explosé vos objectifs hier 👏
                     </p>
                     <div className="Main-grid">
                         <ComponentBarChart id={id}></ComponentBarChart>

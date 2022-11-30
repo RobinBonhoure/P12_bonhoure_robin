@@ -7,6 +7,7 @@ function ComponentRadarChart(props) {
 
   const [data, setData] = useState(null);
 
+  // GET DATA
   useEffect(() => {
     async function loadData() {
       const performance = await getPerformance(props.id)
@@ -16,6 +17,8 @@ function ComponentRadarChart(props) {
     loadData();
   }, [props.id]);
 
+  // TRANSFORM DATA
+  // param : data.json
   function transformData(performance) {
     const kinds = performance.data.kind;
     const values = performance.data.data;

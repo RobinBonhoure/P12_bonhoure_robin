@@ -7,6 +7,7 @@ function ComponentLineChart(props) {
 
   const [data, setData] = useState(null);
 
+  // GET DATA
   useEffect(() => {
     async function loadData() {
       const sessions = await getSessions(props.id)
@@ -16,6 +17,8 @@ function ComponentLineChart(props) {
     loadData();
   }, [props.id]);
 
+  // TRANSFORM DATA
+  // param : data.json
   function transformData(sessions) {
     const transformedData = [];
     const days = [
@@ -35,7 +38,6 @@ function ComponentLineChart(props) {
     }
     return transformedData
   }
-  console.log(data)
 
   return (
     <div>

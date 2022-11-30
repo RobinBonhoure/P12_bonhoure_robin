@@ -7,6 +7,7 @@ function ComponentBarChart(props) {
 
   const [data, setData] = useState(null);
 
+  // GET DATA
   useEffect(() => {
     async function loadData() {
       const activity = await getActivity(props.id)

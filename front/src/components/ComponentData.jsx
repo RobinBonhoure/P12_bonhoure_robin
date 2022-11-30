@@ -10,6 +10,7 @@ function ComponentData(props) {
 
   const [data, setData] = useState(null);
 
+  // GET DATA
   useEffect(() => {
     async function loadData() {
       const initial = await getInitial(props.id);
